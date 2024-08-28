@@ -16,7 +16,7 @@
     <form  class="m-auto needs-validation col-8"  novalidate>
         <div class="d-flex  justify-content-around m-3" >
           <div class="col-md-4 mb-3 " >
-            <label for="first-name-input">First name</label>
+            <label for="first-name-input">First Name</label>
             <input type="text" class="form-control col-3" id="first-name-input" placeholder="First name" value="Mark" required>
            <div class="invalid-feedback">
             First Name is required 
@@ -35,8 +35,11 @@
             <div class="input-group">
             
               <input type="email" class="form-control col-3 " id="email-input" placeholder="Email" aria-describedby="inputGroupPrepend" required>
-             
+              <div class="invalid-feedback">
+                Email is required
             </div>
+            </div>
+
           </div>
         </div>
         <div class="d-flex  justify-content-around">
@@ -48,9 +51,9 @@
             </div>
           </div>
           <div class="col-md-3 mb-3">
-            <label for="selected">Graduation Year</label>
-            <select class="form-select " id="selected" aria-label=".form-select-sm example" required>
-              <option value="" disabled selected>Open this select menu</option>
+            <label for="grad-year-select">Graduation Year</label>
+            <select class="form-select " id="grad-year-select" aria-label=".form-select-sm example" required>
+              <option value="" disabled grad-year-select>Open this select menu</option>
               <option value="1">2020</option>
               <option value="2">2021</option>
               <option value="3">2022</option>
@@ -61,7 +64,7 @@
             </div>
           </div>
           <div class="col-md-3 mb-3">
-            <label for="roll-no-input">Roll No</label>
+            <label for="form-label">Roll No</label>
             <input type="text" class="form-control" id="roll-no-input" placeholder="Roll No" required>
             <div class="invalid-feedback">
               Please provide a valid Roll No.
@@ -91,14 +94,14 @@
             // Loop over them and prevent submission
             var validation = Array.prototype.filter.call(forms, function(form) {
               form.addEventListener('submit', function(event) {
-                var selectElement = document.getElementById("selected");
+                var selectElement = document.getElementById("grad-year-select");
     
 
                 if (form.checkValidity() === false) {
                   event.preventDefault();
                   event.stopPropagation();
                 }
-                if (selectElement.selectedIndex <= 0) {
+                if (selectElement.grad-year-selectIndex <= 0) {
       event.preventDefault();
                   event.stopPropagation();
                   selectElement.classList.add('is-invalid')
